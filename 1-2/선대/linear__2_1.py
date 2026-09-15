@@ -1,14 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# x1 값의 범위
 x1 = np.linspace(-2, 3, 500)
 
+# 2x1 + x2 = 3 -> x2 = 3 - 2x1
 x2_eq1 = 3 - 2 * x1
 
+# 2x1 - x2 = 1 -> x2 = 2x1 - 1
 x2_eq2 = 2 * x1 - 1
 
+# x1 - 2x2 = -1 -> x2 = (x1 + 1) / 2
 x2_eq3 = (x1 + 1) / 2
 
+# 그래프 생성
 plt.figure(figsize=(8,7))
 
 plt.plot(
@@ -31,7 +36,7 @@ plt.plot(
     linewidth=2.5,
     label=r"$x_1-2x_2=-1$"
 )
-
+# 세 직선의 공통해
 solution_x1 = 1
 solution_x2 = 1
 
@@ -50,6 +55,7 @@ plt.annotate(
     fontsize=14
 )
 
+# 공통해를 나타내는 점선
 plt.plot(
     [solution_x1, solution_x1],
     [0, solution_x2],
@@ -66,9 +72,11 @@ plt.plot(
     linewidth=1
 )
 
+# x축과 y축
 plt.axhline(0, color="black", linewidth=1)
 plt.axvline(0, color="black", linewidth=1)
 
+# 그래프 설정
 plt.xlim(-2, 3)
 plt.ylim(-3, 5)
 plt.xlabel(r"$x_1$", fontsize=14)
